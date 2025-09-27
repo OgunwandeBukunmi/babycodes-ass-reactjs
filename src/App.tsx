@@ -258,7 +258,7 @@ export default function App() {
               Universities Our Students Have Been Accepted Into
             </h2>
 
-               <main className="grid  grid-cols-3 md:grid-cols-5 mt-10">
+               <main className="grid  grid-cols-5 md:grid-cols-10 mt-10">
                  {
                 universityLogos.map((uni:universitylogo)=>(
                   <main key={uni.name}>
