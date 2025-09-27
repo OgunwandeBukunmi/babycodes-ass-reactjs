@@ -1,10 +1,25 @@
 
-import React, { useState } from "react";
+import  { useState } from "react";
+interface feature{
+  title : string,
+  desc : string,
+  img : string
+}
+interface testimonial {
+  name :string,
+  score : number,
+  quote : string,
+  img : string,
+}
+type universitylogo = {
+  name : string,
+  logo : string,
+}
 
 export default function App() {
 
-  const[isOpen,setIsopen] = useState(false)
-         const features=[
+  const[isOpen,setIsopen] = useState<boolean>(false)
+         const features:feature[]=[
               {
                 title: "Mock Tests",
                 desc: "Real exam-style mock tests with detailed score breakdowns and actionable feedback.",
@@ -21,27 +36,27 @@ export default function App() {
                 img: "https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=800&q=60",
                 },
             ];
-            const testimonials = [
+            const testimonials:testimonial[] = [
               {
                 name: "Aisha",
-                score: "8.5",
+                score: 8.5,
                 quote: "I scored 8.5 thanks to their coaching! The speaking practice was a game-changer.",
                 img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=60",
               },
               {
                 name: "Priya",
-                score: "9.0",
+                score: 9.0,
                 quote: "Personalized study plan and regular evaluation made all the difference.",
                 img: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=60",
               },
               {
                 name: "Kevin",
-                score: "8.5",
+                score: 8.5,
                 quote: "I owe my score to them, Best coaching I have ever had",
                 img: "https://images.unsplash.com/photo-1653300415221-66bf45b795ea?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
               }
             ]
-            const universityLogos = [
+            const universityLogos:universitylogo[] = [
                     {
                       name: "Harvard University",
                       logo: "https://th.bing.com/th/id/OIP.RqTNJ-ytopU_X4L20qKGggHaHa?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3",
@@ -213,7 +228,7 @@ export default function App() {
           <p className="mt-2 text-center text-blue-600 max-w-2xl mx-auto">Tailored services to get you ready for every section of the IELTS exam.</p>
 
           <div className="mt-10 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-         {features.map((card) => (
+         {features.map((card:feature) => (
               <article
                 key={card.title}
                 className="bg-gradient-to-b from-white to-blue-50 rounded-xl shadow-md overflow-hidden transform hover:shadow-lg transition p-0"
@@ -245,7 +260,7 @@ export default function App() {
 
                <main className="grid  grid-cols-3 md:grid-cols-5 mt-10">
                  {
-                universityLogos.map((uni)=>(
+                universityLogos.map((uni:universitylogo)=>(
                   <main key={uni.name}>
                     
                    <img
@@ -268,7 +283,7 @@ export default function App() {
           <p className="mt-2 text-center text-blue-600 max-w-2xl mx-auto">Hear from students who've improved their band scores with us.</p>
 
           <div className="mt-8 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 ">
-            {testimonials.map((t) => (
+            {testimonials.map((t:testimonial) => (
               <figure key={t.name} className="bg-white rounded-2xl p-5 shadow-sm flex flex-col gap-4 hover:shadow-lg transition">
                 <div className="flex items-center gap-4">
                   <img src={t.img} alt={t.name} className="w-16 h-16 rounded-full object-cover" />
