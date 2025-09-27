@@ -110,7 +110,7 @@ export default function App() {
     </div>
 
     {/* mobile nav */}
-      <div className="md:hidden absolute left-1/2 transform -translate-x-1/2 
+      <div className="md:hidden fixed top-2 left-1/2 transform -translate-x-1/2 
   backdrop-blur-md bg-white/10 flex flex-row items-center justify-between gap-4  
   border border-white/20 shadow-lg px-6 py-4 rounded-xl w-[90%] max-w-4xl z-50">
 
